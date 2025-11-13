@@ -15,7 +15,11 @@ provider "aws" {
 
   default_tags {
     tags = {
-      env = local.env
+      project   = "new-website-launch"
+      team      = "marketing"
+      env       = local.env
+      owner     = "calvin@example.com"
+      managedby = "opentofu"
     }
   }
 }
