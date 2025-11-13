@@ -1,8 +1,8 @@
 resource "aws_acm_certificate" "main" {
   provider = aws.us-east-1
 
-  domain_name               = var.domain_names[0].name
-  subject_alternative_names = [for a in var.domain_names : a.name if a.name != var.domain_names[0].name]
+  domain_name               = var.domain_names[0]
+  subject_alternative_names = [for a in var.domain_names : a if a != var.domain_names[0]]
   validation_method         = "DNS"
 
   lifecycle {

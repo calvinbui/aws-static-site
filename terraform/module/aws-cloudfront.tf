@@ -5,7 +5,7 @@ resource "aws_cloudfront_distribution" "main" {
 
   # Distribution Settings
   price_class         = "PriceClass_All"
-  aliases             = [for a in var.var.domain_names : a.name]
+  aliases             = [for a in var.domain_names : a]
   http_version        = "http2"
   default_root_object = "index.html"
   is_ipv6_enabled     = true
